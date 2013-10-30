@@ -70,6 +70,7 @@ Create a folder under your web application and extract the data into that folder
 Copy the file _esri-leaflet.js_ and _index.html_ in the _webapp_ folder to that folder and launch your
 browser and view the result at http://localhost/myfolder/index.html
 
+![Esri Leaflet](https://dl.dropboxusercontent.com/u/2193160/SpatialJoinRed.png)
 
 ## Unit Testing
 I highly recommend that you look at the test folder - There are two types of unit test cases in there.
