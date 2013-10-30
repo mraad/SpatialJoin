@@ -1,6 +1,6 @@
 # SpatialJoin
 
-Perform Spatial Join on BigData using Hadoop MapReduce [Blog URL](http://localhost)
+[Perform Spatial Join on BigData using Hadoop MapReduce](http://thunderheadxpler.blogspot.com/2013/10/bigdata-spatial-joins.html)
 
 ## Sample Density Run
 In this example, we are joining a set of points from HDFS with a small set of polygons that is loaded from the distributed cache.
