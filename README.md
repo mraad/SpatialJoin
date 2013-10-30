@@ -25,7 +25,7 @@ Save the summary output into local file system:
 Convert polygon set into a shapefile using [ogr2ogr](http://www.gdal.org/ogr2ogr.html) so it can be viewed in ArcMap and related with the above file for visualization:
 
     $ awk -f featurecollection.awk /tmp/polygons.txt > /tmp/fc.json
-    $ ogr2ogr -f "ESRI Shapefile" /tmp/fc.shp /tmp/fc.json
+    $ ogr2ogr -f "ESRI Shapefile" /tmp/poygons /tmp/fc.json
 
 ## Sample Airport/Route Run
 In this example of a map side spatial join, I have a list of airport code pairs forming flight routes between two cities.
