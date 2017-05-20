@@ -3,7 +3,7 @@ package com.esri.red;
 import com.esri.core.geometry.Envelope2D;
 import com.esri.core.geometry.Geometry;
 import com.esri.core.geometry.GeometryEngine;
-import com.esri.core.geometry.Point;
+import com.esri.core.geometry.Point2D;
 import com.esri.core.geometry.Polygon;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -58,12 +58,12 @@ abstract class JoinRedMap
             m_outputValue.bytes = GeometryEngine.geometryToEsriShape(geometry);
 
             geometry.queryEnvelope2D(m_envelope2D);
-            final Point lowerLeft = m_envelope2D.getLowerLeft();
-            final long cmin = (long) Math.max(0.0, Math.floor((lowerLeft.getX() - m_xmin) / m_size));
-            final long rmin = (long) Math.max(0.0, Math.floor((lowerLeft.getY() - m_ymin) / m_size));
-            final Point upperRight = m_envelope2D.getUpperRight();
-            final long cmax = 1L + (long) Math.max(0.0, Math.floor((upperRight.getX() - m_xmin) / m_size));
-            final long rmax = 1L + (long) Math.max(0.0, Math.floor((upperRight.getY() - m_ymin) / m_size));
+            final Point2D lowerLeft = m_envelope2D.getLowerLeft();
+            final long cmin = (long) Math.max(0.0, Math.floor((lowerLeft.x - m_xmin) / m_size));
+            final long rmin = (long) Math.max(0.0, Math.floor((lowerLeft.y - m_ymin) / m_size));
+            final Point2D upperRight = m_envelope2D.getUpperRight();
+            final long cmax = 1L + (long) Math.max(0.0, Math.floor((upperRight.x - m_xmin) / m_size));
+            final long rmax = 1L + (long) Math.max(0.0, Math.floor((upperRight.y - m_ymin) / m_size));
 
             for (long r = rmin; r < rmax; r++)
             {
